@@ -12,13 +12,12 @@ MAN = $SHR/man
 
 # Linux
 OSPORT = LINUX
-SRC = $SRC missing/strlcpy.c missing/kqueue_inotify.c
+SRC = missing/strlcpy.c missing/kqueue_inotify.c
 
 # BSD
 #OSPORT = BSD
 
-CPPFLAGS = -D_GNU_SOURCE -D_$OSPORT'_PORT' \
-	-Imissing '-DRELEASE="'$VERSION'"'
+CPPFLAGS = -D_GNU_SOURCE -D_$OSPORT'_PORT' -Imissing '-DRELEASE="'$VERSION'"'
 CFLAGS = $CFLAGS $CPPFLAGS
 LDFLAGS = $LD_STATIC_FLAG
 
